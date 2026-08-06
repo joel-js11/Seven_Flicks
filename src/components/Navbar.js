@@ -49,7 +49,7 @@ function Navbar() {
         <a href="#about" data-sec="about">About</a>
         <a href="#contact" data-sec="contact">Contact</a>
         <a href="https://wa.me/918903842158?text=Hi%20Seven%20Flicks%2C%20I%27d%20like%20to%20book%20a%20session" 
-           target="_blank" rel="noopener" className="book">Book Now</a>
+           target="_blank" rel="noopener noreferrer" className="book">Book Now</a>
       </div>
     </nav>
   );

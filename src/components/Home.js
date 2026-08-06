@@ -12,7 +12,7 @@ function Home() {
         <h1>We shoot the<br />moments <em>worth keeping.</em></h1>
         <div className="btn-row">
           <a href="https://wa.me/918903842158?text=Hi%20Seven%20Flicks%2C%20I%27d%20like%20to%20book%20a%20session" 
-             target="_blank" rel="noopener" className="btn primary">Book a Session</a>
+             target="_blank" rel="noopener noreferrer" className="btn primary">Book a Session</a>
           <a href="#gallery" className="btn ghost">View Gallery</a>
         </div>
       </div>
