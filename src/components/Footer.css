@@ -1,0 +1,20 @@
+footer {
+  padding: 34px 6vw;
+  background: var(--ink);
+  color: rgba(250, 248, 244, 0.4);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid rgba(250, 248, 244, 0.1);
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 24px 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+}

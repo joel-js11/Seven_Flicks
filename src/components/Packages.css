@@ -1,0 +1,98 @@
+#packages {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+#packages .eyebrow {
+  color: var(--orange);
+}
+
+#packages .eyebrow::before {
+  background: var(--orange);
+}
+
+#packages .section-lede {
+  color: rgba(250, 248, 244, 0.55);
+}
+
+.pkg-list {
+  margin-top: 56px;
+  border-top: 1px solid rgba(250, 248, 244, 0.14);
+}
+
+.pkg-line {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 28px;
+  padding: 30px 4px;
+  border-bottom: 1px solid rgba(250, 248, 244, 0.14);
+  transition: background .25s;
+}
+
+.pkg-line:hover {
+  background: rgba(250, 248, 244, 0.04);
+}
+
+.pkg-line .pnum {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--orange);
+}
+
+.pkg-line .pname {
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-family: 'Fraunces', serif;
+}
+
+.pkg-line .pnote {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(250, 248, 244, 0.5);
+  margin-top: 4px;
+}
+
+.pkg-line .pprice {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  color: var(--orange);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.pkg-line .pprice small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(250, 248, 244, 0.5);
+  display: block;
+  font-weight: 300;
+}
+
+.pkg-line .btn {
+  padding: 12px 22px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .pkg-line {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+    padding: 26px 4px;
+  }
+  .pkg-line .pprice {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pkg-list {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

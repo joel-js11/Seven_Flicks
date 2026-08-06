@@ -1,0 +1,61 @@
+.rev-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 56px;
+}
+
+.rev-card {
+  background: var(--paper);
+  padding: 36px 32px;
+  transition: background .3s;
+}
+
+.rev-card:hover {
+  background: var(--white);
+}
+
+.stars {
+  color: var(--orange-deep);
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.rev-card p {
+  font-size: 1rem;
+  color: var(--ink);
+  opacity: 0.82;
+  margin-bottom: 24px;
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.rev-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.rev-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--grey);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 980px) {
+  .rev-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  .rev-track {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
