@@ -1,3 +1,4 @@
+/* --- NAVBAR BASE (ALWAYS VISIBLE) --- */
 nav {
   position: fixed;
   top: 0;
@@ -10,8 +11,10 @@ nav {
   padding: 30px 6vw;
   transition: background .35s, padding .35s, border-color .35s, box-shadow .35s;
   border-bottom: 1px solid transparent;
+  background: transparent; /* Starts transparent */
 }
 
+/* --- SCROLLED STATE (Only background becomes white) --- */
 nav.scrolled {
   background: rgba(250, 248, 244, 0.94);
   backdrop-filter: blur(16px);
@@ -20,6 +23,7 @@ nav.scrolled {
   box-shadow: 0 8px 30px rgba(21, 19, 16, 0.06);
 }
 
+/* --- LOGO --- */
 .logo-mark {
   display: flex;
   align-items: center;
@@ -29,21 +33,12 @@ nav.scrolled {
   font-size: 1.3rem;
   letter-spacing: 0.01em;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--paper); /* Always White on dark header */
 }
 
-.logo-mark .logo-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* When scrolled, logo turns black */
+nav.scrolled .logo-mark {
   color: var(--ink);
-  font-weight: 700;
-  font-size: 1.2rem;
-  flex-shrink: 0;
 }
 
 .logo-mark .logo-img {
@@ -54,6 +49,7 @@ nav.scrolled {
   flex-shrink: 0;
 }
 
+/* --- DESKTOP LINKS --- */
 .navlinks {
   display: flex;
   align-items: center;
@@ -69,6 +65,11 @@ nav.scrolled {
   position: relative;
   padding: 8px 0;
   text-decoration: none;
+  color: var(--paper); /* Links are White on top */
+}
+
+/* When scrolled, links turn black */
+nav.scrolled .navlinks a {
   color: var(--ink);
 }
 
@@ -86,6 +87,7 @@ nav.scrolled {
   background: var(--orange);
 }
 
+/* --- BOOK NOW BUTTON (Static) --- */
 .navlinks a.book {
   background: var(--ink);
   color: var(--paper);
@@ -94,15 +96,148 @@ nav.scrolled {
   opacity: 1;
   margin-left: 6px;
   letter-spacing: 0.04em;
+  transition: background 0.3s;
+}
+
+nav.scrolled .navlinks a.book {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .navlinks a.book:hover {
   background: var(--orange-deep);
 }
 
+/* --- MOBILE HAMBURGER MENU (3 Lines) --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 110;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--paper); /* White on dark header */
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* When scrolled, hamburger turns black */
+nav.scrolled .hamburger span {
+  background: var(--ink);
+}
+
+/* Hamburger animation when open (turns into X) */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- MOBILE SIDEBAR (Slide in from right) --- */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 380px;
+  height: 100vh;
+  background: var(--paper);
+  z-index: 200;
+  padding: 40px 30px;
+  transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 5px;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.sidebar-links a:hover {
+  opacity: 1;
+}
+
+.sidebar-links a.book-mobile {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-align: center;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 150;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 980px) {
   .navlinks {
     display: none;
+  }
+  .hamburger {
+    display: flex;
   }
 }
 

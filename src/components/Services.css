@@ -121,7 +121,15 @@
   font-size: 0.85rem;
   opacity: 0.8;
 }
+/* This class gets added when the card scrolls into view on mobile */
+.svc-card.scroll-flip .svc-card-inner {
+  transform: rotateY(180deg);
+}
 
+/* NEW: Mobile Scroll Flip */
+.svc-card.scroll-flip .svc-card-inner {
+  transform: rotateY(180deg);
+}
 @media (max-width: 980px) {
   .svc-grid {
     grid-template-columns: repeat(2, 1fr);

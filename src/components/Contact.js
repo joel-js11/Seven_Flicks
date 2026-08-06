@@ -15,8 +15,7 @@ function Contact() {
   const instagramLink =
     'https://www.instagram.com/seven_flicks_photography/';
 
-  const locationLink =
-    'https://www.google.com/maps/search/?api=1&query=Anaiyur%2C+Officer+Town%2C+near+Bava+Clinic%2C+Madurai+625017';
+ const locationLink = 'https://maps.app.goo.gl/aYS38YfNDraXBF6x7';
 
   return (
     <section id="contact" className="reveal">
